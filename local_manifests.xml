@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Local manifest for Evolution X - milanf (Motorola moto g stylus 5G 2022 / SM6375)
+  Branch pinned to lineage-23.2 since Evolution X "cnb" consumes LineageOS
+  device/kernel/vendor trees directly for this SoC family.
+
+  Drop this file into .repo/local_manifests/milanf.xml before `repo sync`.
+-->
+<manifest>
+  <remote name="lineageos" fetch="https://github.com/LineageOS" />
+  <remote name="themuppets" fetch="https://github.com/TheMuppets" />
+
+  <!-- Device trees -->
+  <project path="device/motorola/milanf" name="android_device_motorola_milanf" remote="lineageos" revision="lineage-23.2" />
+  <project path="device/motorola/sm6375-common" name="android_device_motorola_sm6375-common" remote="lineageos" revision="lineage-23.2" />
+
+  <!-- Kernel -->
+  <project path="kernel/motorola/sm6375" name="android_kernel_motorola_sm6375" remote="lineageos" revision="lineage-23.2" />
+
+  <!-- Shared Motorola hardware glue (remove this block if the base manifest already includes it) -->
+  <project path="hardware/motorola" name="android_hardware_motorola" remote="lineageos" revision="lineage-23.2" />
+
+  <!-- Proprietary vendor blobs -->
+  <project path="vendor/motorola/milanf" name="proprietary_vendor_motorola_milanf" remote="themuppets" revision="lineage-23.2" />
+  <project path="vendor/motorola/sm6375-common" name="proprietary_vendor_motorola_sm6375-common" remote="themuppets" revision="lineage-23.2" />
+</manifest>
